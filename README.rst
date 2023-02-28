@@ -11,7 +11,7 @@ An external likelihood using `cobaya <https://github.com/CobayaSampler/cobaya>`_
 Installing the code
 -------------------
 
-If you do not plan to dig into the code or plan with the ``yaml`` files, you can simply install the
+If you do not plan to dig into the code or to play with the ``yaml`` files, you can simply install the
 code directly from this repository
 
 .. code:: shell

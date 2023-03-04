@@ -4,7 +4,7 @@ ACT DR6 Multifrequency Likelihood
 
 An external likelihood using `cobaya <https://github.com/CobayaSampler/cobaya>`_.
 
-.. image:: https://img.shields.io/github/actions/workflow/status/ACTCollaboration/act_dr6_mflike/testing.yml?branch=master
+.. image:: https://github.com/ACTCollaboration/act_dr6_mflike/actions/workflows/testing.yml/badge.svg
    :target: https://github.com/ACTCollaboration/act_dr6_mflike/actions
    :alt: GitHub Workflow Status
 

@@ -1,5 +1,6 @@
-import versioneer
 from setuptools import find_packages, setup
+
+import versioneer
 
 with open("README.rst") as readme_file:
     readme = readme_file.read()
@@ -15,7 +16,7 @@ setup(
     packages=find_packages(),
     python_requires=">=3.7",
     install_requires=[
-        "mflike @ git+https://github.com/simonsobs/LAT_MFLike@v0.8.0#egg=mflike",
+        "mflike>=0.8.2",
     ],
     package_data={"act_dr6_mflike": ["*.yml"]},
 )

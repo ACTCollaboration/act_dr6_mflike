@@ -18,5 +18,5 @@ setup(
     install_requires=[
         "mflike>=0.8.2",
     ],
-    package_data={"act_dr6_mflike": ["*.yml"]},
+    package_data={"act_dr6_mflike": ["*.yaml"]},
 )

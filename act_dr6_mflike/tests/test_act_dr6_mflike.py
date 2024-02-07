@@ -31,16 +31,13 @@ nuisance_params = {
     "a_psee": 0.0,
     "a_pste": 0.0,
     "xi": 0.10,
-    "calG_all": 1,
 }
 for pa in ["pa4_f150", "pa4_f220", "pa5_f090", "pa5_f150", "pa6_f090", "pa6_f150"]:
     nuisance_params.update(
         {
             f"bandint_shift_dr6_{pa}": 0,
             f"cal_dr6_{pa}": 1,
-            f"calT_dr6_{pa}": 1,
             f"calE_dr6_{pa}": 1,
-            f"alpha_dr6_{pa}": 0,
         }
     )
 

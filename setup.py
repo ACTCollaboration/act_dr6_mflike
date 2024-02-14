@@ -14,7 +14,7 @@ setup(
     long_description_content_type="text/x-rst",
     zip_safe=True,
     packages=find_packages(),
-    python_requires=">=3.7",
+    python_requires=">=3.9",
     install_requires=[
         "mflike>=0.8.2",
     ],

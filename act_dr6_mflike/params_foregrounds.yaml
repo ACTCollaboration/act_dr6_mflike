@@ -41,3 +41,26 @@ xi:
 T_d:
   value: 9.60
   latex: T_d
+alpha_s:
+  value: 1.0
+  latex: \alpha_s
+T_effd:
+  value: 19.6
+  latex: T_{\mathrm{dust},\mathrm{eff}}
+beta_d:
+  value: 1.5
+  latex: \beta_\mathrm{dust}
+alpha_dT:
+  value: -0.6
+  latex: \alpha_{\mathrm{dust},T}
+alpha_dE:
+  value: -0.4
+  latex: \alpha_{\mathrm{dust},E}
+alpha_p:
+  value: 1.0
+  latex: \alpha_p
+beta_s:
+  value: -2.5
+  latex: \beta_s
+
+

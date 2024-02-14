@@ -6,8 +6,6 @@
 
 """
 from mflike import MFLike
-from mflike.theoryforge import TheoryForge
-from typing import Mapping
 
 class ACTDR6MFLike(MFLike):
     """

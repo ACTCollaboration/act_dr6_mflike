@@ -29,11 +29,9 @@ class ACTDR6MFLike(MFLike):
 
         self.renames = {}
         # calE corresponds to the polarization efficiency
-        self.renames.update({f"calE_{exp}": f"p_{exp}" for exp in self.experiments}) 
-        # cal correspond to the calibration for each array
-        self.renames.update({f"cal_{exp}": f"c_{exp}" for exp in self.experiments})
-        # calG_all is the overall calibration for ACT, calibrated on Planck
-        self.renames.update({"calG_all": "cal_ACT"})
+        self.renames.update({f"calE_{exp}": f"pol_eff_{exp}" for exp in self.experiments}) 
+        # calG_all is the dipole calibration of Planck
+        self.renames.update({"calG_all": "A_Planck"})
         
         self.expected_params_nuis = [
                 self.translate_param(par) for par in self.expected_params_nuis

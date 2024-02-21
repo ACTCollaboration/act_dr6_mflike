@@ -18,7 +18,7 @@ setup(
     install_requires=[
         #"mflike>=0.8.2",
         "mflike @
-        git+https://github.com/simonsobs/LAT_MFLike@v_act_dr6#egg=mflike",
+        git+https://github.com/simonsobs/lat_mflike@v_act_dr6",
     ],
     package_data={"act_dr6_mflike": ["*.yaml"]},
 )

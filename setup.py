@@ -16,7 +16,9 @@ setup(
     packages=find_packages(),
     python_requires=">=3.9",
     install_requires=[
-        "mflike>=0.8.2",
+        #"mflike>=0.8.2",
+        "mflike @
+        git+https://github.com/simonsobs/LAT_MFLike@v_act_dr6#egg=mflike",
     ],
     package_data={"act_dr6_mflike": ["*.yaml"]},
 )

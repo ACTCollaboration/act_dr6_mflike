@@ -1,62 +1,44 @@
 # Systematics
 calG_all:
   value: 1
-  latex: \mathrm{Cal}_{\rm G}^{\rm All}
+  latex: \mathrm{A}_{\rm Planck}
 cal_dr6_pa4_f150:
   value: 1
-  latex: \mathrm{Cal}_{\rm G}^{\rm pa4 f150}
+  latex: \mathrm{c}_{\rm pa4}^{\rm f150}
 cal_dr6_pa4_f220:
   value: 1
-  latex: \mathrm{Cal}_{\rm G}^{\rm pa4 f220}
+  latex: \mathrm{c}_{\rm pa4}^{\rm f220}
 cal_dr6_pa5_f090:
   value: 1
-  latex: \mathrm{Cal}_{\rm G}^{\rm pa5 f090}
+  latex: \mathrm{c}_{\rm pa5}^{\rm f090}
 cal_dr6_pa5_f150:
   value: 1
-  latex: \mathrm{Cal}_{\rm G}^{\rm pa5 f150}
+  latex: \mathrm{c}_{\rm pa5}^{\rm f150}
 cal_dr6_pa6_f090:
   value: 1
-  latex: \mathrm{Cal}_{\rm G}^{\rm pa6 f090}
+  latex: \mathrm{c}_{\rm pa6}^{\rm f090}
 cal_dr6_pa6_f150:
   value: 1
-  latex: \mathrm{Cal}_{\rm G}^{\rm pa6 f150}
+  latex: \mathrm{c}_{\rm pa6}^{\rm f150}
 
-calT_dr6_pa4_f150:
-  value: 1
-  latex: \mathrm{Cal}_{\rm T}^{\rm pa4 f150}
 calE_dr6_pa4_f150:
   value: 1
-  latex: \mathrm{Cal}_{\rm E}^{\rm pa4 f150}
-calT_dr6_pa4_f220:
-  value: 1
-  latex: \mathrm{Cal}_{\rm T}^{\rm pa4 f220}
+  latex: \mathrm{p}_{\rm pa4}^{\rm f150}
 calE_dr6_pa4_f220:
   value: 1
-  latex: \mathrm{Cal}_{\rm E}^{\rm pa4 f220}
-calT_dr6_pa5_f090:
-  value: 1
-  latex: \mathrm{Cal}_{\rm T}^{\rm pa5 f090}
+  latex: \mathrm{p}_{\rm pa4}^{\rm f220}
 calE_dr6_pa5_f090:
   value: 1
-  latex: \mathrm{Cal}_{\rm E}^{\rm pa5 f090}
-calT_dr6_pa5_f150:
-  value: 1
-  latex: \mathrm{Cal}_{\rm T}^{\rm pa5 f150}
+  latex: \mathrm{p}_{\rm pa5}^{\rm f090}
 calE_dr6_pa5_f150:
   value: 1
-  latex: \mathrm{Cal}_{\rm E}^{\rm pa5 f150}
-calT_dr6_pa6_f090:
-  value: 1
-  latex: \mathrm{Cal}_{\rm T}^{\rm pa6 f090}
+  latex: \mathrm{p}_{\rm pa5}^{\rm f150}
 calE_dr6_pa6_f090:
   value: 1
-  latex: \mathrm{Cal}_{\rm E}^{\rm pa6 f090}
-calT_dr6_pa6_f150:
-  value: 1
-  latex: \mathrm{Cal}_{\rm T}^{\rm pa6 f150}
+  latex: \mathrm{p}_{\rm pa6}^{\rm f090}
 calE_dr6_pa6_f150:
   value: 1
-  latex: \mathrm{Cal}_{\rm E}^{\rm pa6 f150}
+  latex: \mathrm{p}_{\rm pa6}^{\rm f150}
 
 bandint_shift_dr6_pa4_f150:
   value: 0
@@ -76,23 +58,3 @@ bandint_shift_dr6_pa6_f090:
 bandint_shift_dr6_pa6_f150:
   value: 0
   latex: \Delta_{\rm band}^{\rm pa6 f150}
-
-# Rotation angles (units: degree)
-alpha_dr6_pa4_f150:
-  value: 0
-  latex: \alpha^{\rm pa4 f150}
-alpha_dr6_pa4_f220:
-  value: 0
-  latex: \alpha^{\rm pa4 f220}
-alpha_dr6_pa5_f090:
-  value: 0
-  latex: \alpha^{\rm pa5 f090}
-alpha_dr6_pa5_f150:
-  value: 0
-  latex: \alpha^{\rm pa5 f150}
-alpha_dr6_pa6_f090:
-  value: 0
-  latex: \alpha^{\rm pa6 f090}
-alpha_dr6_pa6_f150:
-  value: 0
-  latex: \alpha^{\rm pa6 f150}

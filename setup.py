@@ -14,9 +14,9 @@ setup(
     long_description_content_type="text/x-rst",
     zip_safe=True,
     packages=find_packages(),
-    python_requires=">=3.7",
+    python_requires=">=3.9",
     install_requires=[
-        "mflike>=0.8.2",
+        "mflike>=0.9.4",
     ],
     package_data={"act_dr6_mflike": ["*.yaml"]},
 )

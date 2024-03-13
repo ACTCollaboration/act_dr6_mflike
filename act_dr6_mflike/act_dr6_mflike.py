@@ -7,7 +7,6 @@
 """
 from mflike import MFLike
 
-
 class ACTDR6MFLike(MFLike):
     """
     Likelihood for ACT DR6 data release (2022)

@@ -40,7 +40,7 @@ nuisance_params = {
     "alpha_p": 1,
     "calG_all": 1,
 }
-for pa in ["pa4_f150", "pa4_f220", "pa5_f090", "pa5_f150", "pa6_f090", "pa6_f150"]:
+for pa in ["pa4_f220", "pa5_f090", "pa5_f150", "pa6_f090", "pa6_f150"]:
     nuisance_params.update(
         {
             f"bandint_shift_dr6_{pa}": 0,
@@ -50,10 +50,10 @@ for pa in ["pa4_f150", "pa4_f220", "pa5_f090", "pa5_f150", "pa6_f090", "pa6_f150
     )
 
 chi2s = {
-    "tt": 2772.82,
-    "te-et": 2554.52,
-    "ee": 2382.26,
-    "tt-te-et-ee": 4649.2717,
+    "tt": 2381.35,
+    "te-et": 2054.09,
+    "ee": 1850.25,
+    "tt-te-et-ee": 3239.45,
 }
 
 likelihood_name = "act_dr6_mflike.ACTDR6MFLike"

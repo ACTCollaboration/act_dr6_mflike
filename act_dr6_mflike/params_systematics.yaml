@@ -2,9 +2,6 @@
 calG_all:
   value: 1
   latex: \mathrm{A}_{\rm Planck}
-cal_dr6_pa4_f150:
-  value: 1
-  latex: \mathrm{c}_{\rm pa4}^{\rm f150}
 cal_dr6_pa4_f220:
   value: 1
   latex: \mathrm{c}_{\rm pa4}^{\rm f220}
@@ -21,9 +18,6 @@ cal_dr6_pa6_f150:
   value: 1
   latex: \mathrm{c}_{\rm pa6}^{\rm f150}
 
-calE_dr6_pa4_f150:
-  value: 1
-  latex: \mathrm{p}_{\rm pa4}^{\rm f150}
 calE_dr6_pa4_f220:
   value: 1
   latex: \mathrm{p}_{\rm pa4}^{\rm f220}
@@ -40,9 +34,6 @@ calE_dr6_pa6_f150:
   value: 1
   latex: \mathrm{p}_{\rm pa6}^{\rm f150}
 
-bandint_shift_dr6_pa4_f150:
-  value: 0
-  latex: \Delta_{\rm band}^{\rm pa4 f150}
 bandint_shift_dr6_pa4_f220:
   value: 0
   latex: \Delta_{\rm band}^{\rm pa4 f220}

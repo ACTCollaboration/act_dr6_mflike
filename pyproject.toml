@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "act_dr6_mflike"
+dynamic = ["version"]
+description = "ACT DR6 multi-frequency likelihood for cobaya"
+readme = "README.rst"
+license = { file = "LICENSE" }
+keywords = ["likelihood", "ACT", "DR6", "cosmology"]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: BSD License",
+  "Natural Language :: English",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+]
+requires-python = ">=3.9.0"
+dependencies = ["mflike>=0.9.4"]
+
+[project.optional-dependencies]
+test = ["pytest", "pytest-cov", "camb"]
+
+[project.urls]
+Homepage = "https://github.com/ACTCollaboration/act_dr6_mflike"
+# Documentation = "https://.readthedocs.io"
+Source = "https://github.com/ACTCollaboration/act_dr6_mflike"
+Tracker = "https://github.com/ACTCollaboration/act_dr6_mflike/issues"
+Licensing = "https://github.com/ACTCollaboration/act_dr6_mflike/main/LICENCE"
+
+[tool.setuptools_scm]
+version_file = "act_dr6_mflike/_version.py"
+
+[tool.setuptools.package-data]
+"*" = ["*.yaml"]
+
+[tool.setuptools.packages.find]
+exclude = ["docs", "tests"]
+
+[tool.black]
+line-length = 100
+
+[tool.isort]
+profile = "black"
+
+[tool.coverage.run]
+omit = ["act_dr6_mflike/tests/*", "act_dr6_mflike/_version.py"]
+
+[tool.coverage.report]
+exclude_lines = ["raise LoggedError", "except AttributeError"]

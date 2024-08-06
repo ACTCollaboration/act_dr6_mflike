@@ -2,6 +2,9 @@
 a_tSZ:
   value: 3.30
   latex: a_\mathrm{tSZ}
+alpha_tSZ:
+  value: -0.3
+  latex: \alpha_\mathrm{tSZ}
 a_kSZ:
   value: 1.60
   latex: a_\mathrm{kSZ}

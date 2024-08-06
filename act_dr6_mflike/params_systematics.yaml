@@ -49,3 +49,169 @@ bandint_shift_dr6_pa6_f090:
 bandint_shift_dr6_pa6_f150:
   value: 0
   latex: \Delta_{\rm band}^{\rm pa6 f150}
+
+lknee_deltaT:
+  value: 3000
+  latex: \ell_{\rm knee}^{\delta T}
+lknee_gamma:
+  value: 3000
+  latex: \ell_{\rm knee}^{\gamma}
+lknee_deltaE:
+  value: 3000
+  latex: \ell_{\rm knee}^{\delta E}
+
+m_deltaT_0:
+  value: 0
+  latex: m_{\rm 0}^{\delta T}
+m_gamma_0:
+  value: 0
+  latex: m_{\rm 0}^{\gamma}
+m_deltaE_0:
+  value: 0
+  latex: m_{\rm 0}^{\delta E}
+
+m_deltaT_1:
+  value: 0
+  latex: m_{\rm 1}^{\delta T}
+m_gamma_1:
+  value: 0
+  latex: m_{\rm 1}^{\gamma}
+m_deltaE_1:
+  value: 0
+  latex: m_{\rm 1}^{\delta E}
+
+m_deltaT_2:
+  value: 0
+  latex: m_{\rm 2}^{\delta T}
+m_gamma_2:
+  value: 0
+  latex: m_{\rm 2}^{\gamma}
+m_deltaE_2:
+  value: 0
+  latex: m_{\rm 2}^{\delta E}
+
+m_deltaT_3:
+  value: 0
+  latex: m_{\rm 3}^{\delta T}
+
+m_deltaT_dr6_pa4_f220:
+  derived: True
+  latex: m_{\rm pa4}^{\delta T, \rm f220}
+
+m_deltaT_dr6_pa5_f090:
+  derived: True
+  latex: m_{\rm pa5}^{\delta T, \rm f090}
+m_gamma_dr6_pa5_f090:
+  derived: True
+  latex: m_{\rm pa5}^{\gamma, \rm f090}
+m_deltaE_dr6_pa5_f090:
+  derived: True
+  latex: m_{\rm pa5}^{\delta E, \rm f090}
+
+m_deltaT_dr6_pa5_f150:
+  derived: True
+  latex: m_{\rm pa5}^{\delta T, \rm f150}
+m_gamma_dr6_pa5_f150:
+  derived: True
+  latex: m_{\rm pa5}^{\gamma, \rm f150}
+m_deltaE_dr6_pa5_f150:
+  derived: True
+  latex: m_{\rm pa5}^{\delta E, \rm f150}
+
+m_deltaT_dr6_pa6_f090:
+  derived: True
+  latex: m_{\rm pa6}^{\delta T, \rm f090}
+m_gamma_dr6_pa6_f090:
+  derived: True
+  latex: m_{\rm pa6}^{\gamma, \rm f090}
+m_deltaE_dr6_pa6_f090:
+  derived: True
+  latex: m_{\rm pa6}^{\delta E, \rm f090}
+
+m_deltaT_dr6_pa6_f150:
+  derived: True
+  latex: m_{\rm pa6}^{\delta T, \rm f150}
+m_gamma_dr6_pa6_f150:
+  derived: True
+  latex: m_{\rm pa6}^{\gamma, \rm f150}
+m_deltaE_dr6_pa6_f150:
+  derived: True
+  latex: m_{\rm pa6}^{\delta E, \rm f150}
+
+b_deltaT_0:
+  value: 0
+  latex: b_{\rm 0}^{\delta T}
+b_gamma_0:
+  value: 0
+  latex: b_{\rm 0}^{\gamma}
+b_deltaE_0:
+  value: 0
+  latex: b_{\rm 0}^{\delta E}
+
+b_deltaT_1:
+  value: 0
+  latex: b_{\rm 1}^{\delta T}
+b_gamma_1:
+  value: 0
+  latex: b_{\rm 1}^{\gamma}
+b_deltaE_1:
+  value: 0
+  latex: b_{\rm 1}^{\delta E}
+
+b_deltaT_2:
+  value: 0
+  latex: b_{\rm 2}^{\delta T}
+b_gamma_2:
+  value: 0
+  latex: b_{\rm 2}^{\gamma}
+b_deltaE_2:
+  value: 0
+  latex: b_{\rm 2}^{\delta E}
+
+b_deltaT_3:
+  value: 0
+  latex: b_{\rm 3}^{\delta T}
+
+b_deltaT_dr6_pa4_f220:
+  derived: True
+  latex: b_{\rm pa4}^{\delta T, \rm f220}
+
+b_deltaT_dr6_pa5_f090:
+  derived: True
+  latex: b_{\rm pa5}^{\delta T, \rm f090}
+b_gamma_dr6_pa5_f090:
+  derived: True
+  latex: b_{\rm pa5}^{\gamma, \rm f090}
+b_deltaE_dr6_pa5_f090:
+  derived: True
+  latex: b_{\rm pa5}^{\delta E, \rm f090}
+
+b_deltaT_dr6_pa5_f150:
+  derived: True
+  latex: b_{\rm pa5}^{\delta T, \rm f150}
+b_gamma_dr6_pa5_f150:
+  derived: True
+  latex: b_{\rm pa5}^{\gamma, \rm f150}
+b_deltaE_dr6_pa5_f150:
+  derived: True
+  latex: b_{\rm pa5}^{\delta E, \rm f150}
+
+b_deltaT_dr6_pa6_f090:
+  derived: True
+  latex: b_{\rm pa6}^{\delta T, \rm f090}
+b_gamma_dr6_pa6_f090:
+  derived: True
+  latex: b_{\rm pa6}^{\gamma, \rm f090}
+b_deltaE_dr6_pa6_f090:
+  derived: True
+  latex: b_{\rm pa6}^{\delta E, \rm f090}
+
+b_deltaT_dr6_pa6_f150:
+  derived: True
+  latex: b_{\rm pa6}^{\delta T, \rm f150}
+b_gamma_dr6_pa6_f150:
+  derived: True
+  latex: b_{\rm pa6}^{\gamma, \rm f150}
+b_deltaE_dr6_pa6_f150:
+  derived: True
+  latex: b_{\rm pa6}^{\delta E, \rm f150}

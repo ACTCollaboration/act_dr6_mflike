@@ -18,6 +18,7 @@ cosmo_params = {
 
 nuisance_params = {
     "a_tSZ": 3.30,
+    "alpha_tSZ": 0,
     "a_kSZ": 1.60,
     "a_p": 6.90,
     "beta_p": 2.08,
@@ -46,6 +47,22 @@ for pa in ["pa4_f220", "pa5_f090", "pa5_f150", "pa6_f090", "pa6_f150"]:
             f"bandint_shift_dr6_{pa}": 0,
             f"cal_dr6_{pa}": 1,
             f"calE_dr6_{pa}": 1,
+        }
+    )
+for i in range(4):
+    nuisance_params.update(
+        {
+            f"m_deltaT_{i}": 0,
+            f"b_deltaT_{i}": 0
+        }
+    )
+for i in range(3):
+    nuisance_params.update(
+        {
+            f"m_gamma_{i}": 0,
+            f"b_gamma_{i}": 0,
+            f"m_deltaE_{i}": 0,
+            f"b_deltaE_{i}": 0
         }
     )
 
@@ -96,6 +113,7 @@ class ACTDR6MFLikeTest(unittest.TestCase):
                 }
             )
             loglike = my_like.loglike(cl_dict, **nuisance_params)
+            print(-2 * (loglike - my_like.logp_const), chi2)
             self.assertAlmostEqual(-2 * (loglike - my_like.logp_const), chi2, 2)
 
     def test_cobaya(self):
@@ -106,7 +124,7 @@ class ACTDR6MFLikeTest(unittest.TestCase):
                 }
             },
             "theory": {"camb": {"extra_args": {"lens_potential_accuracy": 1}}},
-            "params": cosmo_params,
+            "params": cosmo_params | nuisance_params,
             "packages_path": packages_path,
         }
         from cobaya.model import get_model

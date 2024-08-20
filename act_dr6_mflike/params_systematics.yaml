@@ -18,21 +18,22 @@ cal_dr6_pa6_f150:
   value: 1
   latex: \mathrm{c}_{\rm pa6}^{\rm f150}
 
-calE_dr6_pa4_f220:
-  value: 1
-  latex: \mathrm{p}_{\rm pa4}^{\rm f220}
-calE_dr6_pa5_f090:
-  value: 1
-  latex: \mathrm{p}_{\rm pa5}^{\rm f090}
-calE_dr6_pa5_f150:
-  value: 1
-  latex: \mathrm{p}_{\rm pa5}^{\rm f150}
-calE_dr6_pa6_f090:
-  value: 1
-  latex: \mathrm{p}_{\rm pa6}^{\rm f090}
-calE_dr6_pa6_f150:
-  value: 1
-  latex: \mathrm{p}_{\rm pa6}^{\rm f150}
+# calE_dr6_pa5_f090:
+#   derived: True
+#   value: "lambda m_deltaE_dr6_pa5_f090, lknee_deltaE, b_deltaE_dr6_pa5_f090: 1/(1 + m_deltaE_dr6_pa5_f090*lknee_deltaE + b_deltaE_dr6_pa5_f090)"
+#   latex: \mathrm{p}_{\rm pa5}^{\rm f090}
+# calE_dr6_pa5_f150:
+#   derived: True
+#   value: "lambda m_deltaE_dr6_pa5_f150, lknee_deltaE, b_deltaE_dr6_pa5_f150: 1/(1 + m_deltaE_dr6_pa5_f150*lknee_deltaE + b_deltaE_dr6_pa5_f150)"
+#   latex: \mathrm{p}_{\rm pa5}^{\rm f150}
+# calE_dr6_pa6_f090:
+#   derived: True
+#   value: "lambda m_deltaE_dr6_pa6_f090, lknee_deltaE, b_deltaE_dr6_pa6_f090: 1/(1 + m_deltaE_dr6_pa6_f090*lknee_deltaE + b_deltaE_dr6_pa6_f090)"
+#   latex: \mathrm{p}_{\rm pa6}^{\rm f090}
+# calE_dr6_pa6_f150:
+#   derived: True
+#   value: "lambda m_deltaE_dr6_pa6_f150, lknee_deltaE, b_deltaE_dr6_pa6_f150: 1/(1 + m_deltaE_dr6_pa6_f150*lknee_deltaE + b_deltaE_dr6_pa6_f150)"
+#   latex: \mathrm{p}_{\rm pa6}^{\rm f150}
 
 bandint_shift_dr6_pa4_f220:
   value: 0
@@ -138,80 +139,52 @@ m_deltaE_dr6_pa6_f150:
   derived: True
   latex: m_{\rm pa6}^{\delta E, \rm f150}
 
-b_deltaT_0:
-  value: 0
-  latex: b_{\rm 0}^{\delta T}
-b_gamma_0:
-  value: 0
-  latex: b_{\rm 0}^{\gamma}
-b_deltaE_0:
-  value: 0
-  latex: b_{\rm 0}^{\delta E}
-
-b_deltaT_1:
-  value: 0
-  latex: b_{\rm 1}^{\delta T}
-b_gamma_1:
-  value: 0
-  latex: b_{\rm 1}^{\gamma}
-b_deltaE_1:
-  value: 0
-  latex: b_{\rm 1}^{\delta E}
-
-b_deltaT_2:
-  value: 0
-  latex: b_{\rm 2}^{\delta T}
-b_gamma_2:
-  value: 0
-  latex: b_{\rm 2}^{\gamma}
-b_deltaE_2:
-  value: 0
-  latex: b_{\rm 2}^{\delta E}
-
-b_deltaT_3:
-  value: 0
-  latex: b_{\rm 3}^{\delta T}
-
 b_deltaT_dr6_pa4_f220:
-  derived: True
+  value: 0
   latex: b_{\rm pa4}^{\delta T, \rm f220}
+b_gamma_dr6_pa4_f220:
+  value: 0
+  latex: b_{\rm pa4}^{\gamma, \rm f220}
+b_deltaE_dr6_pa4_f220:
+  value: 0
+  latex: b_{\rm pa4}^{\delta E, \rm f220}
 
 b_deltaT_dr6_pa5_f090:
-  derived: True
+  value: 0
   latex: b_{\rm pa5}^{\delta T, \rm f090}
 b_gamma_dr6_pa5_f090:
-  derived: True
+  value: 0
   latex: b_{\rm pa5}^{\gamma, \rm f090}
 b_deltaE_dr6_pa5_f090:
-  derived: True
+  value: 0
   latex: b_{\rm pa5}^{\delta E, \rm f090}
 
 b_deltaT_dr6_pa5_f150:
-  derived: True
+  value: 0
   latex: b_{\rm pa5}^{\delta T, \rm f150}
 b_gamma_dr6_pa5_f150:
-  derived: True
+  value: 0
   latex: b_{\rm pa5}^{\gamma, \rm f150}
 b_deltaE_dr6_pa5_f150:
-  derived: True
+  value: 0
   latex: b_{\rm pa5}^{\delta E, \rm f150}
 
 b_deltaT_dr6_pa6_f090:
-  derived: True
+  value: 0
   latex: b_{\rm pa6}^{\delta T, \rm f090}
 b_gamma_dr6_pa6_f090:
-  derived: True
+  value: 0
   latex: b_{\rm pa6}^{\gamma, \rm f090}
 b_deltaE_dr6_pa6_f090:
-  derived: True
+  value: 0
   latex: b_{\rm pa6}^{\delta E, \rm f090}
 
 b_deltaT_dr6_pa6_f150:
-  derived: True
+  value: 0
   latex: b_{\rm pa6}^{\delta T, \rm f150}
 b_gamma_dr6_pa6_f150:
-  derived: True
+  value: 0
   latex: b_{\rm pa6}^{\gamma, \rm f150}
 b_deltaE_dr6_pa6_f150:
-  derived: True
+  value: 0
   latex: b_{\rm pa6}^{\delta E, \rm f150}

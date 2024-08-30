@@ -39,6 +39,7 @@ jobs:
         python -m pytest -vv act_dr6_mflike --cov=act_dr6_mflike --cov-report=xml:coverage.xml
 
     - name: Validate yaml files
+      if: matrix.os == 'ubuntu-latest'
       uses: ibiqlik/action-yamllint@v3
       with:
         file_or_dir: act_dr6_mflike/*.yaml

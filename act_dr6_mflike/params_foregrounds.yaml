@@ -62,3 +62,6 @@ alpha_p:
 beta_s:
   value: -2.5
   latex: \beta_s
+alpha_tSZ:
+  value: -0.3
+  latex: \alpha_\mathrm{tSZ}

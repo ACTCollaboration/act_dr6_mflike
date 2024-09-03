@@ -6,6 +6,18 @@ likelihood:
   act_dr6_mflike.ACTDR6MFLike:
     input_file: act_simu_sacc_00000.fits
 
+theory:
+  camb:
+    stop_at_error: false
+    extra_args:
+      lens_potential_accuracy: 1
+  mflike.BandpowerForeground: null
+
+sampler:
+  mcmc:
+
+output: chains/mcmc
+
 params:
   # Sampled
   cosmomc_theta:
@@ -153,14 +165,3 @@ params:
       max: +1
     proposal: 0.05
     latex: \xi
-
-theory:
-  camb:
-    stop_at_error: false
-    extra_args:
-      lens_potential_accuracy: 1
-
-sampler:
-  mcmc:
-
-output: chains/mcmc

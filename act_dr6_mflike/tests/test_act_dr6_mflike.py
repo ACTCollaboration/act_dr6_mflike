@@ -32,21 +32,24 @@ nuisance_params = {
     "a_pste": 0.0,
     "xi": 0.10,
     "beta_s": -2.5,
-    "alpha_s": 1,
+    "alpha_s": 1.0,
     "T_effd": 19.6,
     "beta_d": 1.5,
     "alpha_dT": -0.6,
     "alpha_dE": -0.4,
-    "alpha_p": 1,
-    "calG_all": 1,
-    "alpha_tSZ": 0,
+    "alpha_p": 1.0,
+    "alpha_tSZ": 0.0,
+    "calG_all": 1.0,
+    "alpha_p": 1.0,
+    "alpha_tSZ": 0.0,
+    "calG_all": 1.0,
 }
 for pa in ["pa4_f220", "pa5_f090", "pa5_f150", "pa6_f090", "pa6_f150"]:
     nuisance_params.update(
         {
-            f"bandint_shift_dr6_{pa}": 0,
-            f"cal_dr6_{pa}": 1,
-            f"calE_dr6_{pa}": 1,
+            f"bandint_shift_dr6_{pa}": 0.0,
+            f"cal_dr6_{pa}": 1.0,
+            f"calE_dr6_{pa}": 1.0,
         }
     )
 
@@ -68,6 +71,7 @@ class ACTDR6MFLikeTest(unittest.TestCase):
 
     def test_act_dr6_like(self):
         import camb
+        from mflike import BandpowerForeground
 
         camb_cosmo = cosmo_params.copy()
         camb_cosmo.update({"lmax": 9000, "lens_potential_accuracy": 1})
@@ -96,7 +100,10 @@ class ACTDR6MFLikeTest(unittest.TestCase):
                     },
                 }
             )
-            loglike = my_like.loglike(cl_dict, **nuisance_params)
+            fg = BandpowerForeground(my_like.get_fg_requirements())
+            fg_totals = fg.get_foreground_model_totals(**nuisance_params)
+
+            loglike = my_like.loglike(cl_dict, fg_totals, **nuisance_params)
             self.assertAlmostEqual(-2 * (loglike - my_like.logp_const), chi2, 2)
 
     def test_cobaya(self):
@@ -106,13 +113,16 @@ class ACTDR6MFLikeTest(unittest.TestCase):
                     "input_file": "act_simu_sacc_00000.fits",
                 }
             },
-            "theory": {"camb": {"extra_args": {"lens_potential_accuracy": 1}}},
-            "params": cosmo_params,
+            "theory": {
+                "camb": {"extra_args": {"lens_potential_accuracy": 1}},
+                "mflike.BandpowerForeground": None,
+            },
+            "params": cosmo_params | nuisance_params,
             "packages_path": packages_path,
         }
         from cobaya.model import get_model
 
         model = get_model(info)
         my_like = model.likelihood[likelihood_name]
-        chi2 = -2 * (model.loglikes(nuisance_params)[0] - my_like.logp_const)
-        self.assertAlmostEqual(chi2[0], chi2s["tt-te-et-ee"], 2)
+        chi2 = -2 * (model.loglike(nuisance_params, return_derived=False) - my_like.logp_const)
+        self.assertAlmostEqual(chi2, chi2s["tt-te-et-ee"], 2)

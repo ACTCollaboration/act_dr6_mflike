@@ -40,9 +40,6 @@ nuisance_params = {
     "alpha_p": 1.0,
     "alpha_tSZ": 0.0,
     "calG_all": 1.0,
-    "alpha_p": 1.0,
-    "alpha_tSZ": 0.0,
-    "calG_all": 1.0,
 }
 for pa in ["pa4_f220", "pa5_f090", "pa5_f150", "pa6_f090", "pa6_f150"]:
     nuisance_params.update(

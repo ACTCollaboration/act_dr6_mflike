@@ -6,7 +6,7 @@ data_folder: ACTDR6MFLike/v0.1
 
 input_file: null
 
-requested_cls: [ "tt", "te", "ee" ]
+requested_cls: ["tt", "te", "ee"]
 
 # Specify default set of spectra and scale cuts
 # to be used

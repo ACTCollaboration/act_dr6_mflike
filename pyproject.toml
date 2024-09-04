@@ -21,7 +21,8 @@ classifiers = [
 requires-python = ">=3.9.0"
 dependencies = [
   #"mflike>=1.0",
-  "mflike@git+https://github.com/simonsobs/LAT_MFLike@restructure#egg=restructure",
+  "mflike@git+https://github.com/simonsobs/LAT_MFLike@master", 
+  #"mflike@git+https://github.com/simonsobs/LAT_MFLike@restructure#egg=restructure",
 ]
 
 [project.optional-dependencies]

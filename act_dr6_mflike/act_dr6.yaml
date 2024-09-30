@@ -6,6 +6,8 @@ data_folder: ACTDR6MFLike/v0.1
 
 input_file: null
 
+requested_cls: ["tt", "te", "ee"]
+
 # Specify default set of spectra and scale cuts
 # to be used
 defaults:
@@ -18,26 +20,6 @@ defaults:
     TE: [2, *lmax]
     ET: [2, *lmax]
     EE: [2, *lmax]
-
-foregrounds:
-  normalisation:
-    nu_0: 150.0
-    ell_0: 3000
-    T_CMB: 2.725
-
-  components:
-    tt:
-      - kSZ
-      - tSZ_and_CIB
-      - cibp
-      - dust
-      - radio
-    te:
-      - radio
-      - dust
-    ee:
-      - radio
-      - dust
 
 data:
   experiments:
@@ -130,4 +112,4 @@ data:
         EE: [500, *lmax]
 
 
-params: !defaults [params_foregrounds, params_systematics]
+params: !defaults [params_systematics]

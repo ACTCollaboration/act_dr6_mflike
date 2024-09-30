@@ -5,9 +5,11 @@
 :Author: ACT Collaboration
 
 """
-from mflike import MFLike
 
-class ACTDR6MFLike(MFLike):
+from mflike.mflike import _MFLike
+
+
+class ACTDR6MFLike(_MFLike):
     """
     Likelihood for ACT DR6 data release (2022)
     """

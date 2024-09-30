@@ -1,6 +1,3 @@
 include act_dr6_mflike/_version.py
 
-exclude .git*
-exclude codecov.yml
-
 prune .github

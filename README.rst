@@ -4,6 +4,8 @@ ACT DR6 Multifrequency Likelihood
 
 An external likelihood using `cobaya <https://github.com/CobayaSampler/cobaya>`_.
 
+.. image:: https://img.shields.io/pypi/v/act_dr6_mflike.svg?style=flat
+   :target: https://pypi.python.org/pypi/act_dr6_mflike
 .. image:: https://github.com/ACTCollaboration/act_dr6_mflike/actions/workflows/testing.yml/badge.svg
    :target: https://github.com/ACTCollaboration/act_dr6_mflike/actions
    :alt: GitHub Workflow Status
@@ -11,12 +13,12 @@ An external likelihood using `cobaya <https://github.com/CobayaSampler/cobaya>`_
 Installing the code
 -------------------
 
-If you do not plan to dig into the code or to play with the ``yaml`` files, you can simply install the
-code directly from this repository
+If you do not plan to dig into the code, you can simply install the
+code with the following command
 
 .. code:: shell
 
-    pip install git+https://github.com/ACTCollaboration/act_dr6_mflike.git
+    pip install act_dr6_mflike [--user]
 
 Otherwise, you first need to clone this repository to some location
 

@@ -14,6 +14,9 @@ theory:
   mflike.BandpowerForeground:
     top_hat_band:
 
+    beam_profile:
+      beam_from_file: null
+
     normalisation:
       nu_0: 150.0
       ell_0: 3000

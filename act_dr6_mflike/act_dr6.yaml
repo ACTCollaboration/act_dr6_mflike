@@ -113,3 +113,5 @@ data:
 
 
 params: !defaults [params_systematics]
+
+priors: !defaults [priors_systematics]

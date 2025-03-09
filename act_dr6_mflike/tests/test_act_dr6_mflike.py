@@ -18,6 +18,7 @@ cosmo_params = {
 
 nuisance_params = {
     "a_tSZ": 3.30,
+    "alpha_tSZ": 0.0,
     "a_kSZ": 1.60,
     "a_p": 6.90,
     "beta_p": 2.08,
@@ -38,7 +39,6 @@ nuisance_params = {
     "alpha_dT": -0.6,
     "alpha_dE": -0.4,
     "alpha_p": 1.0,
-    "alpha_tSZ": 0.0,
     "calG_all": 1.0,
 }
 for pa in ["pa4_f220", "pa5_f090", "pa5_f150", "pa6_f090", "pa6_f150"]:
@@ -51,10 +51,10 @@ for pa in ["pa4_f220", "pa5_f090", "pa5_f150", "pa6_f090", "pa6_f150"]:
     )
 
 chi2s = {
-    "tt": 2381.35,
-    "te-et": 2054.09,
-    "ee": 1850.25,
-    "tt-te-et-ee": 3239.45,
+    "tt": 1316.98,
+    "te-et": 1485.36,
+    "ee": 1289.21,
+    "tt-te-et-ee": 2051.17,
 }
 
 likelihood_name = "act_dr6_mflike.ACTDR6MFLike"
@@ -83,8 +83,8 @@ class ACTDR6MFLikeTest(unittest.TestCase):
             my_like = ACTDR6MFLike(
                 {
                     "packages_path": packages_path,
-                    "data_folder": "ACTDR6MFLike/v0.1",
-                    "input_file": "act_simu_sacc_00000.fits",
+                    "data_folder": "ACTDR6MFLike/v1.0",
+                    "input_file": "dr6_data_sacc_oct22.fits",
                     "defaults": {
                         "polarizations": select.upper().split("-"),
                         "scales": {
@@ -105,11 +105,8 @@ class ACTDR6MFLikeTest(unittest.TestCase):
 
     def test_cobaya(self):
         info = {
-            "likelihood": {
-                likelihood_name: {
-                    "input_file": "act_simu_sacc_00000.fits",
-                }
-            },
+            "debug": True,
+            "likelihood": {likelihood_name: None},
             "theory": {
                 "camb": {"extra_args": {"lens_potential_accuracy": 1}},
                 "mflike.BandpowerForeground": None,

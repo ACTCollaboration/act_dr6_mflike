@@ -17,5 +17,5 @@ class ACTDR6MFLike(_MFLike):
     file_base_name = "act_dr6"
 
     _url = "https://..."
-    _release = "v0.1"
+    _release = "v1.0"
     install_options = {"download_url": f"{_url}/{_release}.tar.gz"}

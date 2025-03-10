@@ -1,10 +1,10 @@
 # MCMC runs for ACT DR6 likelihood
 
-debug: true
+debug: false
 
 likelihood:
   act_dr6_mflike.ACTDR6MFLike:
-    input_file: act_simu_sacc_00000.fits
+    input_file: dr6_data.fits
 
 theory:
   camb:
@@ -24,7 +24,7 @@ theory:
   mflike.BandpowerForeground:
     top_hat_band:
 
-    beam_profile:
+    beam_profile: 
       beam_from_file: null
 
     normalisation:
@@ -60,7 +60,11 @@ sampler:
 
 output: chains/mcmc
 
-priors: !defaults [../act_dr6_mflike/priors_cosmology, ../act_dr6_mflike/priors_foregrounds, ../act_dr6_mflike/priors_systematics]
+priors:
+  tau_sroll2_prior: "lambda tau: stats.norm.logpdf(tau, loc=5.66e-2, scale=5.8e-3)"
+  TTdust_prior: "lambda a_gtt: stats.norm.logpdf(a_gtt, loc=7.95, scale=0.32)"
+  TEdust_prior: "lambda a_gte: stats.norm.logpdf(a_gte, loc=0.423, scale=0.03)"
+  EEdust_prior: "lambda a_gee: stats.norm.logpdf(a_gee, loc=0.1681, scale=0.017)" 
 
 params:
   # Sampled
@@ -274,162 +278,3 @@ params:
   T_d:
     value: 9.60
     latex: T_d
-
-  # systematic params
-  bandint_shift_dr6_pa4_f220:
-    prior:
-      min: -25.0
-      max: 25.0
-    ref:
-      dist: norm
-      loc: 0.0
-      scale: 3.6
-    proposal: 1.8
-    latex: \Delta_{\rm band, pa4}^{\rm f220}
-  bandint_shift_dr6_pa5_f090:
-    prior:
-      min: -10.0
-      max: 10.0
-    ref:
-      dist: norm
-      loc: 0.0
-      scale: 1.0
-    proposal: 0.5
-    latex: \Delta_{\rm band, pa5}^{\rm f090}
-  bandint_shift_dr6_pa5_f150:
-    prior:
-      min: -10.0
-      max: 10.0
-    ref:
-      dist: norm
-      loc: 0.0
-      scale: 1.3
-    proposal: 0.65
-    latex: \Delta_{\rm band, pa5}^{\rm f150}
-  bandint_shift_dr6_pa6_f090:
-    prior:
-      min: -10.0
-      max: 10.0
-    ref:
-      dist: norm
-      loc: 0.0
-      scale: 1.2
-    proposal: 0.6
-    latex: \Delta_{\rm band, pa6}^{\rm f090}
-  bandint_shift_dr6_pa6_f150:
-    prior:
-      min: -10.0
-      max: 10.0
-    ref:
-      dist: norm
-      loc: 0.0
-      scale: 1.1
-    proposal: 0.55
-    latex: \Delta_{\rm band, pa6}^{\rm f150}
-  
-  calG_all:
-    prior:
-      min: 0.9
-      max: 1.1
-    ref:
-      dist: norm
-      loc: 1.0
-      scale: 0.003
-    proposal: 0.0015
-    latex: \mathrm{cal}_{\rm ACT}
-  
-  calE_dr6_pa4_f220:
-    # We do not use the polarization channel of PA4, so we don't vary this parameter.
-    value: 1.0
-    latex: \mathrm{p}_{\rm pa4}^{\rm f220}
-  calE_dr6_pa5_f090:
-    prior:
-      min: 0.9
-      max: 1.1
-    ref:
-      dist: norm
-      loc: 1.0
-      scale: 0.02
-    proposal: 0.01
-    latex: \mathrm{p}_{\rm pa5}^{\rm f090}
-  calE_dr6_pa5_f150:
-    prior:
-      min: 0.9
-      max: 1.1
-    ref:
-      dist: norm
-      loc: 1.0
-      scale: 0.02
-    proposal: 0.01
-    latex: \mathrm{p}_{\rm pa5}^{\rm f150}
-  calE_dr6_pa6_f090:
-    prior:
-      min: 0.9
-      max: 1.1
-    ref:
-      dist: norm
-      loc: 1.0
-      scale: 0.02
-    proposal: 0.01
-    latex: \mathrm{p}_{\rm pa6}^{\rm f090}
-  calE_dr6_pa6_f150:
-    prior:
-      min: 0.9
-      max: 1.1
-    ref:
-      dist: norm
-      loc: 1.0
-      scale: 0.02
-    proposal: 0.01
-    latex: \mathrm{p}_{\rm pa6}^{\rm f150}
-  
-  cal_dr6_pa4_f220:
-    prior:
-      min: 0.9
-      max: 1.1
-    ref:
-      dist: norm
-      loc: 1.0
-      scale: 0.01
-    proposal: 1e-2
-    latex: \mathrm{c}_{\rm pa4}^{\rm f220}
-  cal_dr6_pa5_f090:
-    prior:
-      min: 0.9
-      max: 1.1
-    ref:
-      dist: norm
-      loc: 1.0
-      scale: 0.01
-    proposal: 1e-3
-    latex: \mathrm{c}_{\rm pa5}^{\rm f090}
-  cal_dr6_pa5_f150:
-    prior:
-      min: 0.9
-      max: 1.1
-    ref:
-      dist: norm
-      loc: 1.0
-      scale: 0.01
-    proposal: 1e-3
-    latex: \mathrm{c}_{\rm pa5}^{\rm f150}
-  cal_dr6_pa6_f090:
-    prior:
-      min: 0.9
-      max: 1.1
-    ref:
-      dist: norm
-      loc: 1.0
-      scale: 0.01
-    proposal: 1e-3
-    latex: \mathrm{c}_{\rm pa6}^{\rm f090}
-  cal_dr6_pa6_f150:
-    prior:
-      min: 0.9
-      max: 1.1
-    ref:
-      dist: norm
-      loc: 1.0
-      scale: 0.01
-    proposal: 1e-3
-    latex: \mathrm{c}_{\rm pa6}^{\rm f150}

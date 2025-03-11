@@ -63,11 +63,12 @@ systematics_params = {
 nuisance_params = foregrounds_params | systematics_params
 all_params = cosmo_params | nuisance_params
 
+# Slightly different from published values due to the use of RecFast and low accuracy settings
 chi2s = {
-    "tt": dict(chi2=926.36, nbin=937),
-    "te-et": dict(chi2=1144.62, nbin=1175),
-    "ee": dict(chi2=923.49, nbin=937),
-    "tt-te-et-ee": dict(chi2=1626.42, nbin=1651),
+    "tt": dict(chi2=892.32, nbin=937),
+    "te-et": dict(chi2=1124.41, nbin=1175),
+    "ee": dict(chi2=903.19, nbin=937),
+    "tt-te-et-ee": dict(chi2=1592.06, nbin=1651),
 }
 
 likelihood_name = "act_dr6_mflike.ACTDR6MFLike"
@@ -110,7 +111,10 @@ class ACTDR6MFLikeTest(unittest.TestCase):
                     },
                 }
             )
-            fg = BandpowerForeground(my_like.get_fg_requirements())
+            fg = BandpowerForeground(
+                my_like.get_fg_requirements() | {"beam_profile": {"beam_from_file": None}}
+            )
+            fg.init_bandpowers()
             fg_totals = fg.get_foreground_model_totals(**nuisance_params)
 
             loglike = my_like.loglike(cl_dict, fg_totals, **systematics_params)
@@ -132,6 +136,7 @@ class ACTDR6MFLikeTest(unittest.TestCase):
                         "dr6_pa6_f150",
                     ],
                     "bandint_freqs": [220, 90, 150, 90, 150],
+                    "beam_profile": {"beam_from_file": None},
                 },
             },
             "params": all_params,

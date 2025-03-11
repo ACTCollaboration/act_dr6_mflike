@@ -2,9 +2,9 @@
 # see https://github.com/simonsobs/LAT_MFLike/blob/master/mflike/MFLike.yaml
 # for more details regarding section
 
-data_folder: ACTDR6MFLike/v0.1
+data_folder: ACTDR6MFLike/v1.0
 
-input_file: null
+input_file: dr6_data.fits
 
 requested_cls: ["tt", "te", "ee"]
 

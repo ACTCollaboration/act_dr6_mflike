@@ -6,55 +6,69 @@ packages_path = os.environ.get("COBAYA_PACKAGES_PATH") or os.path.join(
     tempfile.gettempdir(), "act_dr6_packages"
 )
 
+# Best fit values ACT DR6
 cosmo_params = {
-    "cosmomc_theta": 0.0104085,
-    "As": 2.0989031673191437e-09,
-    "ombh2": 0.02237,
-    "omch2": 0.1200,
-    "ns": 0.9649,
-    "Alens": 1.0,
-    "tau": 0.0544,
+    "cosmomc_theta": 1.040547237e-02,
+    "As": 2.127445742e-09,
+    "ombh2": 2.261650205e-02,
+    "omch2": 1.240404189e-01,
+    "ns": 9.663813976e-01,
+    "tau": 5.655092745e-02,
 }
 
-nuisance_params = {
-    "a_tSZ": 3.30,
-    "a_kSZ": 1.60,
-    "a_p": 6.90,
-    "beta_p": 2.08,
-    "a_c": 4.90,
-    "beta_c": 2.20,
-    "a_s": 3.10,
-    "T_d": 9.60,
-    "a_gtt": 8.70,
-    "a_gte": 0.0,
-    "a_gee": 0.0,
-    "a_psee": 0.0,
-    "a_pste": 0.0,
-    "xi": 0.10,
-    "beta_s": -2.5,
+foregrounds_params = {
+    "a_tSZ": 3.50114277,
+    "alpha_tSZ": -0.4597721879,
+    "a_kSZ": 0.986604682,
+    "a_p": 7.647742104,
+    "beta_p": 1.86490755,
+    "a_c": 3.805341822,
+    "beta_c": 1.86490755,
+    "a_s": 2.886594272,
+    "beta_s": -2.7567784,
+    "a_gtt": 7.974213801,
+    "a_gte": 0.4184588365,
+    "a_gee": 0.1676466062,
+    "a_psee": 0.003755819497,
+    "a_pste": -0.02500092711,
+    "xi": 0.06424293336,
     "alpha_s": 1.0,
     "T_effd": 19.6,
     "beta_d": 1.5,
     "alpha_dT": -0.6,
     "alpha_dE": -0.4,
     "alpha_p": 1.0,
-    "alpha_tSZ": 0.0,
-    "calG_all": 1.0,
+    "T_d": 9.60,
 }
-for pa in ["pa4_f220", "pa5_f090", "pa5_f150", "pa6_f090", "pa6_f150"]:
-    nuisance_params.update(
-        {
-            f"bandint_shift_dr6_{pa}": 0.0,
-            f"cal_dr6_{pa}": 1.0,
-            f"calE_dr6_{pa}": 1.0,
-        }
-    )
 
+systematics_params = {
+    "calG_all": 1.001567048,
+    "cal_dr6_pa4_f220": 0.9808084654,
+    "cal_dr6_pa5_f090": 1.000098497,
+    "cal_dr6_pa5_f150": 0.9991342522,
+    "cal_dr6_pa6_f090": 0.9998031382,
+    "cal_dr6_pa6_f150": 1.001407626,
+    "calE_dr6_pa4_f220": 1.0,
+    "calE_dr6_pa5_f090": 0.9874026803,
+    "calE_dr6_pa5_f150": 0.9975776488,
+    "calE_dr6_pa6_f090": 0.9975750142,
+    "calE_dr6_pa6_f150": 0.9968551529,
+    "bandint_shift_dr6_pa4_f220": 6.399328024,
+    "bandint_shift_dr6_pa5_f090": -0.2911716302,
+    "bandint_shift_dr6_pa5_f150": -1.056426408,
+    "bandint_shift_dr6_pa6_f090": 0.3121747872,
+    "bandint_shift_dr6_pa6_f150": -0.4252785128,
+}
+
+nuisance_params = foregrounds_params | systematics_params
+all_params = cosmo_params | nuisance_params
+
+# Slightly different from published values due to the use of RecFast and low accuracy settings
 chi2s = {
-    "tt": 2381.35,
-    "te-et": 2054.09,
-    "ee": 1850.25,
-    "tt-te-et-ee": 3239.45,
+    "tt": dict(chi2=892.32, nbin=937),
+    "te-et": dict(chi2=1124.41, nbin=1175),
+    "ee": dict(chi2=903.19, nbin=937),
+    "tt-te-et-ee": dict(chi2=1592.06, nbin=1651),
 }
 
 likelihood_name = "act_dr6_mflike.ACTDR6MFLike"
@@ -71,20 +85,20 @@ class ACTDR6MFLikeTest(unittest.TestCase):
         from mflike import BandpowerForeground
 
         camb_cosmo = cosmo_params.copy()
-        camb_cosmo.update({"lmax": 9000, "lens_potential_accuracy": 1})
+        camb_cosmo.update(lmax=9000, lens_potential_accuracy=1)
         pars = camb.set_params(**camb_cosmo)
         results = camb.get_results(pars)
         powers = results.get_cmb_power_spectra(pars, CMB_unit="muK")
         cl_dict = {k: powers["total"][:, v] for k, v in {"tt": 0, "ee": 1, "te": 3}.items()}
 
-        for select, chi2 in chi2s.items():
+        for select, meta in chi2s.items():
             from act_dr6_mflike import ACTDR6MFLike
 
             my_like = ACTDR6MFLike(
                 {
                     "packages_path": packages_path,
-                    "data_folder": "ACTDR6MFLike/v0.1",
-                    "input_file": "act_simu_sacc_00000.fits",
+                    "data_folder": "ACTDR6MFLike/v1.0",
+                    "input_file": "dr6_data.fits",
                     "defaults": {
                         "polarizations": select.upper().split("-"),
                         "scales": {
@@ -97,29 +111,42 @@ class ACTDR6MFLikeTest(unittest.TestCase):
                     },
                 }
             )
-            fg = BandpowerForeground(my_like.get_fg_requirements())
+            fg = BandpowerForeground(
+                my_like.get_fg_requirements() | {"beam_profile": {"beam_from_file": None}}
+            )
+            fg.init_bandpowers()
             fg_totals = fg.get_foreground_model_totals(**nuisance_params)
 
-            loglike = my_like.loglike(cl_dict, fg_totals, **nuisance_params)
-            self.assertAlmostEqual(-2 * (loglike - my_like.logp_const), chi2, 2)
+            loglike = my_like.loglike(cl_dict, fg_totals, **systematics_params)
+            self.assertEqual(my_like.data_vec.size, meta.get("nbin"))
+            self.assertAlmostEqual(-2 * (loglike - my_like.logp_const), meta.get("chi2"), 2)
 
     def test_cobaya(self):
         info = {
-            "likelihood": {
-                likelihood_name: {
-                    "input_file": "act_simu_sacc_00000.fits",
-                }
-            },
+            "debug": True,
+            "likelihood": {likelihood_name: None},
             "theory": {
                 "camb": {"extra_args": {"lens_potential_accuracy": 1}},
-                "mflike.BandpowerForeground": None,
+                "mflike.BandpowerForeground": {
+                    "experiments": [
+                        "dr6_pa4_f220",
+                        "dr6_pa5_f090",
+                        "dr6_pa5_f150",
+                        "dr6_pa6_f090",
+                        "dr6_pa6_f150",
+                    ],
+                    "bandint_freqs": [220, 90, 150, 90, 150],
+                    "beam_profile": {"beam_from_file": None},
+                },
             },
-            "params": cosmo_params | nuisance_params,
+            "params": all_params,
             "packages_path": packages_path,
         }
         from cobaya.model import get_model
 
         model = get_model(info)
         my_like = model.likelihood[likelihood_name]
-        chi2 = -2 * (model.loglike(nuisance_params, return_derived=False) - my_like.logp_const)
-        self.assertAlmostEqual(chi2, chi2s["tt-te-et-ee"], 2)
+        chi2 = -2 * (model.loglike(all_params, return_derived=False) - my_like.logp_const)
+
+        self.assertEqual(my_like.data_vec.size, chi2s["tt-te-et-ee"].get("nbin"))
+        self.assertAlmostEqual(chi2, chi2s["tt-te-et-ee"].get("chi2"), 2)

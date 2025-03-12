@@ -18,7 +18,7 @@ code with the following command
 
 .. code:: shell
 
-    pip install act_dr6_mflike [--user]
+    python -m pip install act_dr6_mflike [--user]
 
 Otherwise, you first need to clone this repository to some location
 
@@ -30,15 +30,13 @@ Then you can install the ``act_dr6_mflike`` likelihood and its dependencies *via
 
 .. code:: shell
 
-    pip install -e /where/to/clone
+    python -m pip install -e /where/to/clone
 
 Installing ACT DR6 data
 -----------------------
 
-Preliminary simulated data can be found at `NERSC
-<https://portal.nersc.gov/cfs/sobs/users/xgarrido/act_dr6_sim>`_. You can download them by yourself
-but you can also use the ``cobaya-install`` binary and let it do the installation job. For instance,
-if you do the next command
+To install ACT D6 data, the easiest way is to use the ``cobaya-install`` binary and 
+let it do the installation job. For instance, if you do the next command
 
 .. code:: shell
 
@@ -57,7 +55,7 @@ You can test the ``act_dr6_mflike`` likelihood by doing
 
     cobaya-run /where/to/clone/examples/act_dr6_example.yaml -p /where/to/put/packages
 
-which should run a MCMC sampler for a simulated file (*i.e.* ``act_simu_sacc_000000.fits`` in the
+which should run a MCMC sampler for ACT DR6 official data file (*i.e.* ``dr6_data.fits`` in the
 ``act_dr6_example.yaml`` file) using the combination of TT, TE and EE spectra (*i.e.*
 ``polarizations: ['TT', 'TE', 'ET', 'EE']``). The results will be stored in the ``chains/mcmc``
 directory.

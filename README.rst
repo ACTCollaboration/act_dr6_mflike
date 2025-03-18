@@ -49,7 +49,9 @@ within the ``/where/to/put/packages`` directory. For more details, you can have 
 Running/testing the code
 ------------------------
 
-You can test the ``act_dr6_mflike`` likelihood by doing
+You can test the ``act_dr6_mflike`` likelihood (you will need ``CosmoRec`` to be installed and
+``camb`` aware of it, see `installation instructions
+<https://www.jb.man.ac.uk/~jchluba/Science/CosmoRec/CosmoRec.html>`_) by doing
 
 .. code:: shell
 

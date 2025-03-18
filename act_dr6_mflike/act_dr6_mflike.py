@@ -16,6 +16,6 @@ class ACTDR6MFLike(_MFLike):
 
     file_base_name = "act_dr6"
 
-    _url = "https://..."
-    _release = "v1.0"
-    install_options = {"download_url": f"{_url}/{_release}.tar.gz"}
+    install_options = {
+        "download_url": "https://portal.nersc.gov/project/act/dr6_data/dr6_data.tar.gz"
+    }

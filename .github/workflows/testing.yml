@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
-        python-version: ["3.9", "3.10", "3.11"]
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
 
     steps:
     - uses: actions/checkout@v4
@@ -43,3 +43,11 @@ jobs:
       uses: ibiqlik/action-yamllint@v3
       with:
         file_or_dir: act_dr6_mflike/*.yaml
+        config_data: |
+          extends: default
+          rules:
+            document-start:
+              present: false
+            line-length:
+              max: 100
+              level: warning

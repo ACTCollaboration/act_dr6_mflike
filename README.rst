@@ -2,7 +2,8 @@
 ACT DR6 Multifrequency Likelihood
 =================================
 
-An external likelihood using `cobaya <https://github.com/CobayaSampler/cobaya>`_.
+An external likelihood using `cobaya <https://github.com/CobayaSampler/cobaya>`_ and based on 
+`LAT_MFLike <https://github.com/simonsobs/LAT_MFLike>`_.
 
 .. image:: https://img.shields.io/pypi/v/act_dr6_mflike.svg?style=flat
    :target: https://pypi.python.org/pypi/act_dr6_mflike

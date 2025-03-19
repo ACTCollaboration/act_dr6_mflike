@@ -52,7 +52,7 @@ Running/testing the code
 
 You can test the ``act_dr6_mflike`` likelihood (you will need ``CosmoRec`` to be installed and
 ``camb`` aware of it, see `installation instructions
-<https://www.jb.man.ac.uk/~jchluba/Science/CosmoRec/CosmoRec.html>`_) by doing
+<https://github.com/ACTCollaboration/ACT-DR6-parameters?tab=readme-ov-file#installing-cosmorec>`_) by doing
 
 .. code:: shell
 

@@ -36,7 +36,7 @@ Then you can install the ``act_dr6_mflike`` likelihood and its dependencies *via
 Installing ACT DR6 data
 -----------------------
 
-To install ACT D6 data, the easiest way is to use the ``cobaya-install`` binary and 
+To install ACT DR6 data, the easiest way is to use the ``cobaya-install`` binary and 
 let it do the installation job. For instance, if you do the next command
 
 .. code:: shell

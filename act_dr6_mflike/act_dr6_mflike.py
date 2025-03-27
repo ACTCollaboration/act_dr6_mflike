@@ -17,5 +17,5 @@ class ACTDR6MFLike(_MFLike):
     file_base_name = "act_dr6"
 
     install_options = {
-        "download_url": "https://portal.nersc.gov/project/act/dr6_data/dr6_data.tar.gz"
+        "download_url": "https://lambda.gsfc.nasa.gov/data/act/pspipe/sacc_files/dr6_data.tar.gz"
     }

@@ -65,10 +65,10 @@ all_params = cosmo_params | nuisance_params
 
 # Slightly different from published values due to the use of RecFast and low accuracy settings
 chi2s = {
-    "tt": dict(chi2=892.32, nbin=937),
-    "te-et": dict(chi2=1124.41, nbin=1175),
-    "ee": dict(chi2=903.19, nbin=937),
-    "tt-te-et-ee": dict(chi2=1592.06, nbin=1651),
+    "tt": dict(chi2=892.15, nbin=937),
+    "te-et": dict(chi2=1124.26, nbin=1175),
+    "ee": dict(chi2=902.79, nbin=937),
+    "tt-te-et-ee": dict(chi2=1591.81, nbin=1651),
 }
 
 likelihood_name = "act_dr6_mflike.ACTDR6MFLike"

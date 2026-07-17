@@ -67,7 +67,7 @@ all_params = cosmo_params | nuisance_params
 chi2s = {
     "tt": dict(chi2=892.15, nbin=937),
     "te-et": dict(chi2=1124.26, nbin=1175),
-    "ee": dict(chi2=903.19, nbin=937),
+    "ee": dict(chi2=902.79, nbin=937),
     "tt-te-et-ee": dict(chi2=1591.81, nbin=1651),
 }
 
